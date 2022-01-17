@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <secttion class="main" id="main">
+        <div class="blur_main">
+            <div class="back-icon">
+                <img src="images/back.png" alt="back" onclick="prikol()">
+            </div>
+            <div class="main-logo">
+                <img src="images/logo.png" alt="logo">
+                <p>Scan your feet</p>
+            </div>
+            <div class="main-icons">
+                <img src="images/photo.png" alt="photo">
+                <img src="images/video.png" alt="video">
+            </div>
+            <div class="main-card">
+                <div class="main-card-line"></div>
+                <div class="main-card-row">
+                    <div class="main-card-row-text">
+                        <h3>Balenciaga</h3>
+                        <p>Triple S low-top trainers</p>
+                    </div>
+                    <div class="main-card-row-img">
+                        <img src="images/bucket.png" alt="buket" onclick="print_shoe()">
+                    </div>
+                </div>
+                <div class="shoe-img">
+                    <img src="images/shoe.png" alt="">
+                </div>
+                <div class="circle-bg"></div>
+            </div>
+        </div>
+    </secttion>
+
+    <!-- ботиОчек -->
+
+    <section class="shoe_section" id="shoe_section">
+        <div class="back-icon_fav">
+            <img src="images/back2.png" alt="back" onclick="print_main()">
+            <img src="images/heart.png" alt="like">
+        </div>
+        
+        <div class="big_shoe">
+            <img src="images/bshoe.png" alt="">
+        </div>
+        <div class="shoe_text">
+            <h1>Balenciaga</h1>
+            <p class="shoe_desc">Triple S low-top trainers</p>
+            <div class="shoe_ozenka">
+                <img src="images/stars.png" alt="">
+                <p>4.5 <span class="gray"> / 5.0</span></p>
+            </div>
+            <p class="text_govna">In 2017, Balenciaga gathered moulds of running, basketball and track.</p>
+        </div>
+        <div class="all_inputs">
+            <input checked type="radio" id="switch1" name="size">
+            <input type="radio" id="switch2" name="size">
+            <input type="radio" id="switch3" name="size">
+            <input type="radio" id="switch4" name="size">
+            <input type="radio" id="switch5" name="size">
+            <input type="radio" id="switch6" name="size">
+            <input type="radio" id="switch7" name="size">
+            <div id="active" class="shoe_size">
+                <label for="switch1">8</label>
+                <label for="switch2">8.5</label>
+                <label for="switch3">9</label>
+                <label for="switch4">9.5</label>
+                <label for="switch5">10</label>
+                <label for="switch6">10.5</label>
+                <label for="switch7">11</label>
+            </div>
+        </div>
+        
+        <div class="shoe_buttons">
+            <button class="shoe_button shoe_btn1">Add to cart — $92.15</button>
+            <button class="shoe_button shoe_btn2"><img src="images/ar.png" alt=""> AR view</button>
+        </div>
+        <div class="shoe_cirle"></div>
+    </section>
+</body>
+<script src="js/main.js"></script>
+
+</html>

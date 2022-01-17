@@ -1,0 +1,45 @@
+#app {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+}
+
+#canvas {
+    border: solid 1px #aaa;
+    cursor: default;
+    display: block;
+    margin: auto;
+}
+
+.clear {
+    background: #eee;
+    color: #777;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin: 15px auto;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.clear:hover {
+    background-color: rgb(46, 82, 179);
+    color: #fff
+}
+
+input[type='color'],
+input[type='number'] {
+    margin-right: 10px;
+}
+
+input[type='number'] {
+    padding: 10px;
+    font-size: 1em;
+}
+
+.menu div {
+    margin-top: 15px;
+}
+
+.menu div:first-child {
+    margin-top: 0;
+}

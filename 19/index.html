@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if='scene == "main"' class="content__wrapper">
+            <h3>Проверка услуг медицинского страхования</h3>
+            <div class="inputs_radio">
+                <label v-bind:class='{active : TS == "OMS"}' @click='TS = "OMS"' for="DMS1">ОМС</label>
+                <label v-bind:class='{active : TS == "DMS"}' @click='TS = "DMS"' for="DMS2">ДМС</label>
+                <input type="radio" name="DMS" id="DMS1">
+                <input type="radio" name="DMS" id="DMS2">
+            </div>
+            <div class="inputs_raw">
+                <div class="inputs_raw_item">
+                    <input :readonly="checked" v-model="input_polis" @input="filterTS" type="text" placeholder="Введите номер полиса">
+                    <p v-if="checked" class="inputs_raw_desc">Дата окончания {{date_polis}} г.</p>
+                </div>
+                <div class="sk_wrapper">
+                    <input readonly class="sk_input" v-if="!checked" @blur="unfocusSK()" @focus="showSK = true" v-model="input_sk" type="text" placeholder="Выберите страховую компанию">
+                    <input readonly v-if="checked" v-model="input_sk" type="text" placeholder="Выберите страховую компанию">
+                    <div v-if="showSK" class="sk_options">
+                        <div @click='input_sk = "СК Рандеву"' class="sk_option">
+                            <img src="media/images/sk1.png" alt="">
+                            <a href="#">СК Рандеву </a>
+                        </div>
+                        <div @click='input_sk = "СК МЕД-АСКЕР"' class="sk_option">
+                            <img src="media/images/sk2.png" alt="">
+                            <a href="#">СК МЕД-АСКЕР</a>
+                        </div>
+                        <div @click='input_sk = "Страх-трах"' class="sk_option">
+                            <img src="media/images/sk3.png" alt="">
+                            <a href="#">Страх-трах</a>
+                        </div>
+                    </div>
+                    <p v-if="checked" class="inputs_raw_desc">{{SK_tel}}</p>
+                </div>
+            </div>
+            <div class="services__wrapper">
+                <h4>Выберите медицинские услуги</h4>
+                <input @input="filterServices" class="service_input" v-if="!checked" v-model="input_service" @blur="unfocusServices()" @focus="showServices = true" type="text" placeholder="Введите запрашиваемую услугу для пациента">
+                <input readonly v-if="checked" placeholder="Введите запрашиваемую услугу для пациента">
+                <div v-if="showServices" class="services_options__wrapper">
+                    <div v-for="(item, index) in temp_service" :key="index" @click='addService(item.id)' class="services_option">
+                        <p>{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="services__grid">
+                <div v-if="!checked" v-for="(item, index) in inputed_services" :key="index" class="services__grid_item">
+                    <p>{{item.name}}</p>
+                    <img @click="removeService(item.id)" src="media/images/cancel.png" alt="">
+                </div>
+                <div v-if="checked" v-for="(item, index) in inputed_services" :key="index" v-bind:class="item.status" class="services__grid_item">
+                    <p>{{item.name}}</p>
+                </div>
+            </div>
+            <button v-if="!checked" @click="check" class="btn_check">Проверить</button>
+            <button v-if="checked" @click="uncheck" class="btn_uncheck">Новый запрос</button>
+        </div>
+        <div v-if='scene == "error"' class="error__wrapper">
+            <h3>Полис с таким номером не обнаружен</h3>
+            <p>Попробуйте изменить данные</p>
+            <button @click="uncheck">Ок</button>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

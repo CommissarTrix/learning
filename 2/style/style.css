@@ -1,0 +1,503 @@
+*{
+	font-family: 'Roboto', sans-serif;
+	color:black;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+section{
+	padding: 60px 100px;
+}
+.df{
+	display: flex;
+	justify-content: space-between;
+}
+.il{
+	display: inline-flex; ;
+}
+header{
+	padding-right: 100px;
+	padding-left:60px;
+	padding-top:30px;
+	padding-bottom: 40px; 
+}
+header a{
+	font-size:16px;
+}
+header p{
+	font-size:20px;
+	padding-top: 2px;
+}
+.header_left img{
+	padding-right: 5px;
+	width: 28px;
+	height: 25px;
+	position: relative;
+	bottom: 3px;
+}
+.header_right a{
+	padding-left: 10px;
+	padding-bottom: 17px;
+}
+.header_right img{
+	position: relative;
+	top: 4px;
+	width: 20px;
+	height: 22px;
+}
+.logo_text{
+	font-family: 'Work Sans', sans-serif;
+}
+.header_links{
+	padding-top: 5px;
+	padding-left: 35px;
+}
+.header_links a{
+	padding-left:25px;
+}
+li{
+	list-style-type: none;
+}
+li::before{
+	content: "✔";
+}
+.grid{
+	display: grid;
+	grid-template-areas: 
+	"grid_vklad grid_credit grid_strah grid_services"
+	"grid_second grid_second grid_second grid_second";
+}
+#grid_vklad{
+	grid-area: grid_vklad;
+	background-color: #F6F7FF;
+}
+#grid_credit{
+	grid-area: grid_credit;
+}
+#grid_strah{
+	grid-area: grid_strah;
+}
+#grid_services{
+	grid-area: grid_services;
+}
+#grid_second{
+	grid-area: grid_second;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.grid__item_raw {
+	align-items: center;
+	height: 100px;
+}
+.grid__item_raw p{
+	font-size: 18px;
+	padding-left:3px; 
+	margin-right: auto;
+}
+.grid__item_raw img{
+	margin-left: auto;
+}
+
+.grid__item_second{
+	padding:60px;
+	background-color: #F6F7FF;
+}
+.grid__item_second h3{
+	font-size: 22px;
+	padding-bottom: 40px;
+}
+.grid__item_second li{
+	font-size: 18px;
+	padding-bottom: 25px;
+}
+.grid__item_second button{
+	border:none;
+	border-radius: 4px;
+	color:white;
+	background-color: #2C36F2;
+	width: 200px;
+	height: 50px;
+	font-size: 16px;
+}
+
+/*СЛАЙДЕР*/
+
+.slider{
+	padding: 0
+}
+
+#slider{ /*центровка слайдера*/
+	margin: 0 auto;
+}
+
+#slides article{ /*все изображения справа друг от доруга*/
+	width: 20%;
+	float: left;
+}
+
+#slides .image{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+}
+
+#overflow{ /*сркывает все, что находится за пределами этого блока*/
+	width: 100%;
+	overflow: hidden;
+}
+
+label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
+	cursor: pointer;
+}
+
+.all input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
+	display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#active label{ /*стиль отдельного переключателя*/
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 10px;
+	height: 10px;
+	background: #2028B6;
+}
+
+#active{ /*расположение блока с переключателями*/
+	text-align: center;
+	position: relative;
+	bottom: 40px;
+}
+
+#active label:hover{ /*поведение чекбокса при наведении*/
+	background: #76c8ff;
+	border-color: #777 !important; /*выполнение в любом случае*/
+}
+
+/*цвет активного лейбла при активации чекбокса*/
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4),
+#switch5:checked ~ #active label:nth-child(5){
+	background:white;
+	border-color:white !important;
+}
+
+#slides .image{ /*анимация пролистывания изображений*/
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+.image article{
+	height: 400px;
+}
+.slide1{
+	display: grid;
+	grid-template-columns:  1fr 1fr;
+	background-color: #2C36F2;
+}
+.slide1 .slide1_left{
+	padding-left: 250px;
+}
+.slide1 .slide1_left h3{
+	padding-top: 115px;
+	font-size: 54px;
+	color:white;
+}
+.slide1 .slide1_left p{
+	padding-top: 25px;
+	color:#E0E1EA;
+	font-size: 22px;
+}
+.slide1 .slide1_left button{
+	font-size: 18px;
+	margin-top: 40px;
+	border-radius: 4px;
+	width: 230px;
+	height: 50px;
+	background-color: white;
+	border:none;
+}
+.slide1 .slide1_right{
+	padding-right: 250px;
+}
+.slide1_right_img1{
+	position: relative;
+	top:80px;
+	left:170px;
+}
+.slide1_right_img2{
+	position: relative;
+	bottom: 80px;
+	left:50px;
+}
+
+.slide2{
+	background-image: url(../img/sbg1.png);
+	display: grid;
+	grid-template-columns:  1fr 1fr;
+}
+.slide2 .slide2_left{
+	padding-left: 250px;
+}
+.slide2 .slide2_left h3{
+	font-size: 54px;
+	padding-top: 115px;
+}
+
+.slide2 .slide2_left p{
+	font-size:22px;
+	padding-top: 15px;
+	color:#2B3C4F;
+}
+
+.slide3{
+	display: grid;
+	grid-template-columns:  1fr 1fr;
+	background-image: url(../img/sbg2.png);
+}
+.slide3 .slide3_left{
+	padding-left: 250px;
+}
+.slide3 .slide3_left h3{
+	padding-top: 115px;
+	font-size: 54px;
+}
+.slide3 .slide3_left p{
+	padding-top: 25px;
+	color:#2B3C4F;
+	font-size: 22px;
+}
+.slide3 .slide3_left button{
+	font-size: 18px;
+	margin-top: 40px;
+	border-radius: 4px;
+	width: 230px;
+	height: 50px;
+	background-color: white;
+	border:none;
+}
+/* СЛАЙДЕР */
+.map h1{
+	font-size: 41px;
+	color:black;
+	padding-bottom: 70px;
+}
+.map_inputs_raw{
+	height: 90px;
+	margin:auto;
+	background-color: #F6F7FF;
+	text-align:center;
+}
+.map_inputs_raw label{
+	font-size: 14px;
+	position: relative;
+	top: 37px;
+	padding-left: 30px;
+}
+.map_inputs_raw input{
+	margin-right: 10px;
+}
+.map img{
+	width: 100%;
+}
+
+
+footer{
+	background-color: #F6F7FF;
+	vertical-align: middle;
+	padding: 60px 100px;
+	display: grid;
+	grid-template-columns: 1.3fr 1fr 1fr 1fr 0.7fr;
+}
+footer li{
+	font-size: 16px;
+	padding-bottom:20px;
+}
+footer li::before{
+	content: "";
+}
+.footer_df{
+	display: flex;
+}
+.phone_img{
+	height: 16px;
+	margin-right: 5px; 
+}
+.gray_text{
+	padding-top: 10px;
+	font-size: 12px;
+	color: #707C87;
+}
+#footer_links img{
+	margin-left: 15px;
+}
+
+
+#calc_grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap:40px;
+}
+
+.calc h1{
+	font-size: 41px;
+	padding-bottom: 70px;
+}
+.calc input{
+	text-align: center;
+}
+#calc_grid_left h3{
+	font-size: 22px;
+	padding-bottom: 30px;
+}
+#calc_select, #calc_cost, #calc_rez,#calc_time{
+	border-radius: 4px;
+	border:1px solid black;
+	width: 600px;
+	height: 60px;
+	font-size: 16px;
+}
+input[type="select"] option{
+	background-color: red;
+}
+input[type="range"]{
+	width: 600px;
+}
+
+#calc_select{
+	margin-bottom: 40px;
+}
+.calc_desc{
+	padding-bottom: 15px;
+	color: #394959;
+	font-size: 16px;
+}
+.calc_small{
+	font-size: 14px;
+	color: #707C87;
+	padding-bottom: 30px;
+}
+.calc_checkbox{
+	display: flex;
+}
+.calc_checkbox p{
+	padding-left: 10px;
+	font-size: 16px;
+}
+#calc_grid_right{
+	background-color: #F6F7FF;
+	padding: 40px 40px;
+	height: 340px;
+}
+#calc_grid_right h3{
+	padding-bottom: 40px; 
+}
+#calc_grid_right_grid{
+	border-radius: 4px;
+	display: grid;
+	grid-template-columns:1fr 1fr;
+}
+.calc_grid_right_grid__item{
+	padding-bottom: 40px;
+}
+.right_grid_text{
+	padding-bottom:10px;
+	font-size: 22px;
+}
+.right_grid_desc{
+	font-size: 16;
+	color: #394959;
+}
+.calc_btn{
+	color:white;
+	font-size: 16px;
+	background-color: #2C36F2;
+	border-radius:4px;
+	border:none;
+	width: 380px;
+	height: 50px;
+}
+.cacl_zayava{
+	margin-top: 70px;
+	width: 800px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 70px;
+	background-color: #F6F7FF;
+	text-align: center;
+}
+.cacl_zayava h3{
+	font-size: 22px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.cacl_zayava_desc{
+	font-size: 16px;
+	color:#394959;
+}
+.calc_zayava_text{
+	font-size: 22px;
+	color:#1F1E25;
+}
+.calc_zayava_raw{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+.cacl_zayava hr{
+	border: 1px solid #C4C4C4;
+}
+.cacl_zayava_grid{
+	padding-top: 30px;
+	display: grid;
+	grid-column-gap:30px;
+	grid-row-gap: 30px;
+	grid-template-areas: 
+	"calc_zayava_input1 calc_zayava_input1"
+	"calc_zayava_input2 calc_zayava_input3";
+}
+#calc_zayava_input1{
+	grid-area: calc_zayava_input1;
+}
+.calc_zayava_input1 input,.calc_zayava_input2 input,.calc_zayava_input3 input{
+	width: 100%;
+	height: 60px;
+	border:1px solid #0A1E32;
+	border-radius:4px;
+	text-align: left;
+
+}
+.calc_zayava_input1 input::placeholder,.calc_zayava_input2 input::placeholder,.calc_zayava_input3 input::placeholder{
+	font-size: 18px;
+	color:#707C87;
+}
+#calc_zayava_input2{
+	grid-area: calc_zayava_input2;
+}
+#calc_zayava_input3{
+	grid-area: calc_zayava_input3;
+}
+.calc_zayava_btn{
+	margin-top: 40px;
+	text-align: center;
+	border-radius:4px;
+	border:none;
+	width: 200px;
+	height: 50px;
+	color:white;
+	font-size:16px; 
+	background-color: #2C36F2;
+}

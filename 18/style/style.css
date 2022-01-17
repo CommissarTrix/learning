@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto';
+    color: #4A4A4A;
+}
+
+body {
+    background: #eff1f4;
+}
+
+.main__wrapper {
+    width: 60%;
+    margin: 70px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 197, 197)
+}
+
+.title {
+    padding-bottom: 20px;
+    font-weight: 5 00;
+    font-size: 22px;
+}
+
+.filters {
+    display: inline-flex;
+}
+
+.filters .filter_wrapper {
+    padding: 10px 30px;
+    border: 1px solid #D9D9D9;
+}
+
+.filters .filter_wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+.filters .filter_wrapper:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.filters .filter_wrapper:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.filters .active_filter {
+    background-color: #2196f3;
+    border: 1px solid #2196f3;
+}
+
+.filters .active_filter a {
+    color: white;
+}
+
+.errors {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.errors ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.errors li {
+    list-style: none;
+}
+
+.errors_li__item {
+    margin-left: 15px;
+}
+
+.errors_li__item p {
+    font-size: 1.2em;
+}
+
+.errors_li__item p:last-child {
+    padding-top: 5px;
+    font-size: .9em;
+    color: #A0B0B9;
+}
+
+.errors li::before {
+    position: relative;
+    top: 15px;
+    margin-right: 15px;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #8bc34a;
+}
+
+.lines {
+    display: flex;
+}
+
+.line {
+    width: 25%;
+    height: 20px;
+    transition: .5s;
+}
+
+.lines .line:first-child {
+    background-color: #ffcc02;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.lines .line:nth-child(2) {
+    background-color: #5856d5;
+}
+
+.lines .line:nth-child(3) {
+    background-color: #2196f3;
+}
+
+.lines .line:last-child {
+    background-color: #a0b0ba;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.errors_counts {
+    margin-top: 20px;
+}
+
+.errors_counts ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+.errors_counts__item {
+    margin-left: 15px;
+    padding-right: 40px;
+}
+
+.errors_counts li::before {
+    position: relative;
+    top: 15px;
+    margin-right: 15px;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 10%;
+}
+
+.errors_counts li:first-child::before {
+    background-color: #ffcc02;
+}
+
+.errors_counts li:nth-child(2)::before {
+    background-color: #5856d5;
+}
+
+.errors_counts li:nth-child(3)::before {
+    background-color: #2196f3;
+}
+
+.errors_counts li:last-child::before {
+    background-color: #a0b0ba;
+}
+
+
+/* картОчки*/
+
+.card {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+}
+
+.card-left {
+    display: inline-flex;
+}
+
+.img_line {
+    display: block;
+    margin: auto;
+}
+
+.content {
+    margin-left: 20px;
+}
+
+.content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.content_span {
+    margin-left: 7px;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 10px;
+}
+
+.content .good {
+    background-color: #8BC34A;
+}
+
+.content .bad {
+    background-color: #FF6A67;
+}
+
+.badh3 {
+    color: #FF6A67;
+}
+
+.content p {
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.content .content_date {
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.content_gray {
+    color: #A0B0B9;
+}
+
+.card-right h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card-right h3:first-child {
+    margin-top: 0
+}
+
+.card-right-desc,
+.card-right-help {
+    padding-top: 7px;
+}
+
+.card-right-help a {
+    text-decoration: none;
+    color: #2196F3;
+}
+
+.cards__wrapper hr {
+    width: 93%;
+    margin-left: auto;
+    margin-top: 20px;
+    border: 1px solid #EFF1F4;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="test" type="text" name="" id="">
+        <h3>Все пропуска</h3>
+        <ul class="passes">
+            <li v-for="pass in passes">
+                <p> {{pass.name}} </p>
+                <img :src="pass.photo" alt="">
+                <p>{{pass.data}}</p>
+            </li>
+        </ul>
+        <hr>
+        <div class="inputs">
+            <div v-if="scene == 'FirstStep'">
+                <input type="text" placeholder="Введите ФИО" ref="Oleg" v-model="new_pass.name">
+                <button @click="scene = 'SecondStep'">Далее</button>
+            </div>
+            <div v-if="scene == 'SecondStep'" @dragover.prevent @drop.prevent @change="uploadFile" class="file_div">
+                <label @drop="dragFile" for="file" class="label_file">
+                    <img :src="new_pass.photo" v-if="new_pass.photo" class="file_photo">
+                </label>
+                <input type="file" id="file">
+                <button @click="scene = 'FirstStep'">Назад</button>
+                <button @click="scene = 'ThirdStep'">Далее</button>
+            </div>
+            <div v-if="scene == 'ThirdStep'">
+                <label for="unlimited">Бессрочный<input @click="checkboxInput" type="checkbox" id="unlimited" v-model="unlimited"></label><br>
+                <input id="input_data" v-model="new_pass.data" type="date" placeholder="Введите дату" :readonly="unlimited">
+                <button @click="scene = 'SecondStep'">Назад</button>
+                <button @click="AddPass">Добавить челика</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

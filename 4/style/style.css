@@ -1,0 +1,279 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@media (max-width: 580px){
+    .main{
+        display: block;
+        height: 100vh;
+        background-image: url(../images/blur.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        overflow: hidden;
+    }
+    .blur_main{
+        background: linear-gradient(rgba(28,28,25,.2),rgba(28,28,25,0));
+    }
+    .back-icon{
+        padding-top: 60px;
+        padding-left: 30px;
+    }
+    .main-logo{
+        width: auto;
+        text-align: center;
+        padding-top: 45%;      
+    }
+    .main-logo img{
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .main-logo p{
+        padding-top: 10px;
+        color:#fff;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .main-icons img{
+        display: block;
+        width:auto;
+        margin-left: 80%;
+    }
+    .main-icons img:last-of-type{
+        padding-top: 20px;
+        padding-bottom: 10%;
+    }
+    .main-card{
+        padding: 20px;
+        width: 70%;
+        margin:auto;
+        background-color: #fff;
+        border-radius: 36px 36px 0 0;
+    }
+    .main-card-line{
+        margin-left:auto;
+        margin-right:auto;
+        width: 40px;
+        height: 5px;
+        background-color: #fff;
+        position: relative;
+        bottom: 50px;
+        border-radius:12px;
+    }
+    .main-card-row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-card-row-text h3{
+        font-size: 16px;
+        font-weight:bold;
+    }
+    .main-card-row-text p{
+        padding-top: 4px;
+        font-size: 12px;
+        color:#1c1c19b0;
+    }
+    .shoe-img{
+        position: relative;
+        z-index: 2;
+    }
+    .shoe-img img{
+        padding-top: 10px;
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .circle-bg{
+        position: relative;
+        margin-left:auto;
+        margin-right:auto;
+        bottom:80px;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background-color: #f7f7f7;
+        z-index: 1;
+    }
+    /* ботиОчек*/
+    .shoe_section{
+        width: 100%;
+        overflow: hidden;
+        display: none;
+        height: auto;
+    }
+    .back-icon_fav{
+        padding: 60px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .shoe_cirle{
+        background-color: #f7f7f7;
+        width: 590px;
+        height: 590px;
+        border-radius:50%;
+        position: relative;
+        z-index: -1;
+        bottom: 1050px;
+        left:-20px;
+    }
+    .big_shoe img{
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .shoe_text{
+        padding-top: 50px;
+        text-align: center;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .shoe_text h1{
+        font-size: 24px;
+    }
+    .shoe_desc{
+        padding-top: 4px;
+        font-size: 14px;
+        color:#1c1c19b0;
+    }
+    .shoe_ozenka{
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .shoe_ozenka{
+        color:black;
+        font-size:14px;
+    }
+    .gray{
+        color:#1c1c19b0;
+    }
+    .text_govna{
+        padding-top: 12px;
+        font-size: 14px;
+    }
+
+
+
+    /* РАЗМЕРЫ */
+    .all_inputs input{
+        display: none;
+    }
+    .shoe_size{
+        padding-top: 30px;
+        margin:auto;
+        width: 90%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    
+    .shoe_size label{
+        font-weight: bold;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding: 18px;
+    }
+    #switch1:checked ~ #active label:nth-child(1),
+    #switch2:checked ~ #active label:nth-child(2),
+    #switch3:checked ~ #active label:nth-child(3),
+    #switch4:checked ~ #active label:nth-child(4),
+    #switch5:checked ~ #active label:nth-child(5),
+    #switch6:checked ~ #active label:nth-child(6),
+    #switch7:checked ~ #active label:nth-child(7){
+        background: #655EB0;
+        border-radius:24px;
+        color:white;
+    }
+
+    #switch1:checked ~ #active label:nth-child(2){opacity: .7;}
+    #switch1:checked ~ #active label:nth-child(3){opacity: .6;}
+    #switch1:checked ~ #active label:nth-child(4){opacity: .5;}
+    #switch1:checked ~ #active label:nth-child(5){opacity: .4;}
+    #switch1:checked ~ #active label:nth-child(6){opacity: .3;}
+    #switch1:checked ~ #active label:nth-child(7){opacity: .2;}
+    
+    #switch2:checked ~ #active label:nth-child(1){opacity: .7;}
+    #switch2:checked ~ #active label:nth-child(3){opacity: .7;}
+    #switch2:checked ~ #active label:nth-child(4){opacity: .6;}
+    #switch2:checked ~ #active label:nth-child(5){opacity: .5;}
+    #switch2:checked ~ #active label:nth-child(6){opacity: .4;}
+    #switch2:checked ~ #active label:nth-child(7){opacity: .3;}
+        
+    #switch3:checked ~ #active label:nth-child(1){opacity: .6;}
+    #switch3:checked ~ #active label:nth-child(2){opacity: .7;}
+    #switch3:checked ~ #active label:nth-child(4){opacity: .7;}
+    #switch3:checked ~ #active label:nth-child(5){opacity: .6;}
+    #switch3:checked ~ #active label:nth-child(6){opacity: .5;}
+    #switch3:checked ~ #active label:nth-child(7){opacity: .4;}
+            
+    #switch4:checked ~ #active label:nth-child(1){opacity: .5;}
+    #switch4:checked ~ #active label:nth-child(2){opacity: .6;}
+    #switch4:checked ~ #active label:nth-child(3){opacity: .7;}
+    #switch4:checked ~ #active label:nth-child(5){opacity: .7;}
+    #switch4:checked ~ #active label:nth-child(6){opacity: .6;}
+    #switch4:checked ~ #active label:nth-child(7){opacity: .5;}
+                
+    #switch5:checked ~ #active label:nth-child(1){opacity: .4;}
+    #switch5:checked ~ #active label:nth-child(2){opacity: .5;}
+    #switch5:checked ~ #active label:nth-child(3){opacity: .6;}
+    #switch5:checked ~ #active label:nth-child(4){opacity: .7;}
+    #switch5:checked ~ #active label:nth-child(6){opacity: .7;}
+    #switch5:checked ~ #active label:nth-child(7){opacity: .6;}
+                    
+    #switch6:checked ~ #active label:nth-child(1){opacity: .3;}
+    #switch6:checked ~ #active label:nth-child(2){opacity: .4;}
+    #switch6:checked ~ #active label:nth-child(3){opacity: .5;}
+    #switch6:checked ~ #active label:nth-child(4){opacity: .6;}
+    #switch6:checked ~ #active label:nth-child(5){opacity: .7;}
+    #switch6:checked ~ #active label:nth-child(7){opacity: .7;}
+                        
+    #switch7:checked ~ #active label:nth-child(1){opacity: .2;}
+    #switch7:checked ~ #active label:nth-child(2){opacity: .3;}
+    #switch7:checked ~ #active label:nth-child(3){opacity: .4;}
+    #switch7:checked ~ #active label:nth-child(4){opacity: .5;}
+    #switch7:checked ~ #active label:nth-child(5){opacity: .6;}
+    #switch7:checked ~ #active label:nth-child(6){opacity: .7;}
+
+    #active label:hover{
+        background: #76c8ff;
+    }
+    /* РАЗМЕРЫ */
+
+
+    .shoe_buttons{
+        width: 70%;
+        text-align: center;
+        margin:auto;
+        padding-top: 35px;
+    }
+    .shoe_button{
+        display: block;
+        width: 100%;
+        border-radius: 24px;
+        border:none;
+        height:73px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .shoe_btn1{
+        background-color: #FFDB76;
+    }
+    .shoe_btn2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 16px;
+        background-color: transparent;
+        border:1px solid #DEDEDD;
+    }
+    .shoe_btn2 img{
+        padding-right: 10px;
+    }
+}

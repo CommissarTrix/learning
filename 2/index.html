@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<header class="df">
+		<div class="header_left df">
+			<img src="img/logo.png" alt="лого">
+			<p class="logo_text">ЛИГА Банк</p>
+			<div class="header_links">
+				<a href="#">Услуги</a>
+				<a href="#">Рассчитать кредит</a>
+				<a href="#">Контакты</a>
+				<a href="#">Задать вопрос</a>
+			</div>
+		</div>
+		<div class="header_right">
+			<img src="img/vhod.png" alt="вход">
+			<a href="#">Войти в Интернет-банк</a>
+		</div>
+	</header>
+
+	<section class="slider">
+		<div class="all">
+			<!-- <input checked type="radio" name="respond" id="desktop"> -->
+				<article id="slider">
+					<input checked type="radio" name="slider" id="switch1">
+					<input type="radio" name="slider" id="switch2">
+					<input type="radio" name="slider" id="switch3">
+					<input type="radio" name="slider" id="switch4">
+					<input type="radio" name="slider" id="switch5">
+					<div id="slides">
+						<div id="overflow">
+							<div class="image">
+								<!-- СЛАЙД -->
+								<article class="slide1">
+									<div class="slide1_left">
+										<h3>Лига Банк</h3>
+										<p>Кредиты на любой случай</p>
+										<button>Рассчитать кредит</button>
+									</div>
+									<div class="slide1_right">
+										<img src="img/card1.png" alt="" class="slide1_right_img1">
+										<img src="img/card2.png" alt="" class="slide1_right_img2">
+									</div>
+								</article>
+								<!-- СЛАЙД -->
+								<article class="slide2">
+									<div class="slide2_left">
+										<h3>Лига Банк</h3>
+										<p>Ваша уверенность в завтрашнем дне</p>
+									</div>
+									<div class="slide2_right">
+									</div>
+								</article>
+								<!-- СЛАЙД -->
+								<article class="slide3">
+									<div class="slide3_left">
+										<h3>Лига Банк</h3>
+										<p>Всегда рядом</p>
+										<button>Найти отделение</button>
+									</div>
+									<div class="slide3_right">
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				<div id="active">
+					<label for="switch1"></label>
+					<label for="switch2"></label>
+					<label for="switch3"></label>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="service">
+		<div class="grid">
+			<div class="grid__item il grid__item_raw" id="grid_vklad" onclick="print_service('grid_vklad')"><img src="img/vault.png" alt="пикча"><p>Вклады</p></div>
+			<div class="grid__item il grid__item_raw" id="grid_credit" onclick="print_service('grid_credit')"><img src="img/cards.png" alt="пикча"><p>Кредиты</p></div>
+			<div class="grid__item il grid__item_raw" id="grid_strah" onclick="print_service('grid_strah')"><img src="img/security.png" alt="пикча"><p>Страхование</p></div>
+			<div class="grid__item il grid__item_raw" id="grid_services" onclick="print_service('grid_services')"><img src="img/phone2.png" alt="пикча"><p>Онлайн-сервисы</p></div>
+			<div class="grid__item grid__item_second" id="grid_second">
+				<div id="grid_second__item_left">
+					<h3 id="grid_second__item_left_h3">Вклады Лига Банка – это выгодная инвестиция в свое будущее</h3>
+					<ul id="grid_second__item_left_ul">
+						<li id="grid_second__item_left_li1">Проценты по вкладам до 7%</li>
+						<li id="grid_second__item_left_li2">Разнообразные условия</li>
+						<li id="grid_second__item_left_li3">Возможность ежемесячной капитализации или вывод процентов на банковскую карту</li>
+					</ul>
+					<div id="grid_second__item_left_btn_cont">
+						<button id="grid_second__item_left_btn">Узнать подробнее</button>
+					</div>
+				</div>
+				<div id="grid_second__item_right">
+					<img src="img/piggybank.png" alt="пикча" id="grid_second__item_right_img">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="calc">
+		<h1>Кредитный калькулятор</h1>
+		<div id="calc_grid">
+			<div id="calc_grid_left">
+				<h3>Шаг 1. Цель кредита</h3>
+				<select id="calc_select">
+					<option value="">Ипотечное кредитование</option>
+					<option value="">Автомобильное кредитование</option>
+					<option value="">Потребительский кредит</option>
+				</select>
+				<h3>Шаг 2. Введите параметры кредита</h3>
+				<p class="calc_desc">Стоимость недвижимости</p>
+				<input id="calc_cost" name="calc_cost" type="number" placeholder="2 000 000 рубей" step="20000" min="1200000" max="25000000">
+				<p class="calc_small">от 1 200 000 до 25 000 000 рублей</p>
+
+				<p class="calc_desc">Первоначальный взнос</p>
+				<input type="number" readonly id="calc_rez">
+				<input type="range" id="calc_vznos" min="10" max="100" step="5" value="10" onchange="calc(this.value)">
+				<p class="calc_small">10%</p>
+
+				<p class="calc_desc">Срок кредитования</p>
+				<input type="text" placeholder="5 лет" id="calc_time">
+				<input type="range" id="calc_time_range" name="calc_time_range" min="10" max="100" step="5" value="10">
+				<p class="calc_small">5 лет</p>
+
+				<div class="calc_checkbox">
+					<input type="checkbox"> 
+					<p>Использовать мать</p>
+				</div>
+			</div>
+			<div id="calc_grid_right">
+				<h3>Наше предложение</h3>
+				<div id="calc_grid_right_grid">
+					<div class="calc_grid_right_grid__item">
+						<p class="right_grid_text">1 330 000 рублей </p>
+						<p class="right_grid_desc">Сумма ипотеки</p>
+					</div>
+					<div class="calc_grid_right_grid__item">
+						<p class="right_grid_text">9,40%</p>
+						<p class="right_grid_desc">Процентная ставка</p>
+					</div>
+					<div class="calc_grid_right_grid__item">
+						<p class="right_grid_text">27 868 рублей</p>
+						<p class="right_grid_desc">Ежемесячный платеж</p>
+					</div>
+					<div class="calc_grid_right_grid__item">
+						<p class="right_grid_text">61 929 рублей</p>
+						<p class="right_grid_desc">Необходимый доход</p>
+					</div>
+				</div>
+				<button class="calc_btn">Оформить заявку</button>
+			</div>
+		</div>
+		<div class="cacl_zayava">
+			<h3>Шаг 3. Оформление заявления</h3>
+			<div class="calc_zayava_raw">
+				<p class="cacl_zayava_desc">Номер заявки</p>
+				<p class="calc_zayava_text">№ 666</p>
+			</div>
+			<hr>
+			<div class="calc_zayava_raw">
+				<p class="cacl_zayava_desc">Цель кредита</p>
+				<p class="calc_zayava_text">Ипотека</p>
+			</div>
+			<hr>
+			<div class="calc_zayava_raw">
+				<p class="cacl_zayava_desc">Стоимость недвижимости</p>
+				<p class="calc_zayava_text">2 000 000 рублей</p>
+			</div>
+				<hr>
+			<div class="calc_zayava_raw">
+				<p class="cacl_zayava_desc">Первоначальный взнос</p>
+				<p class="calc_zayava_text"> 200 000 рублей</p>
+			</div>
+				<hr>
+			<div class="calc_zayava_raw">
+				<p class="cacl_zayava_desc">Срок кредитования</p>
+				<p class="calc_zayava_text">5 лет</p>
+			</div>
+				<hr>
+			<div class="cacl_zayava_grid" id="cacl_zayava_grid">
+				<div class="calc_zayava_input1" id="calc_zayava_input1">
+					<input type="text" placeholder="ФИО">
+				</div>
+				<div class="calc_zayava_input2" id="calc_zayava_input2">
+					<input type="text" placeholder="Телефон">
+				</div>
+				<div class="calc_zayava_input3" id="calc_zayava_input3">
+					<input type="text" placeholder="E-mail">
+				</div>
+			</div>
+			<button class="calc_zayava_btn">Отправить</button>
+		</div>
+	</section>
+
+
+
+	<section class="map">
+		<h1>Отделения Лига Банка</h1>
+		<div class="map_inputs_raw">
+			<div class="map_inputs">
+				<label for=""><input type="checkbox">Россия</label>
+				<label for=""><input type="checkbox">СНГ</label>
+				<label for=""><input type="checkbox">Европа</label>
+			</div>
+		</div>
+		<img src="img/map.png" alt="">
+	</section>
+
+	<footer>
+		<div id="footer_logo">
+			<div class="footer_df">
+				<img src="img/logo.png" alt="">
+				<p >ЛИГА Банк</p>
+			</div>
+			<p class="gray_text">150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050<br>Ⓒ Лига Банк, 2019</p>
+		</div>
+		<div id="footer_links">
+			<ul>
+				<li><a href="#">Услуги</a></li>
+				<li><a href="#">Рассчитать кредит</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Задать вопрос</a></li>
+			</ul>
+		</div>
+		<div id="footer_num1">
+			<div class="footer_df">
+				<img src="img/phone3.png" alt="" class="phone_img">
+				<h4>*0904</h4>
+			</div>
+			<p class="gray_text">Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+		</div>
+		<div id="footer_num2">
+			<div class="footer_df">
+				<img src="img/phone4.png" alt="" class="phone_img">
+				<h4>8 800 111 22 33</h4>
+			</div>
+			<p class="gray_text">Бесплатный для всех городов России</p>
+		</div>
+		<div id="footer_links">
+			<img src="img/f.png" alt="">
+			<img src="img/i.png" alt="">
+			<img src="img/t.png" alt="">
+			<img src="img/y.png" alt="">
+		</div>
+	</footer>
+
+</body>
+<script src="js/main.js"></script>
+</html>

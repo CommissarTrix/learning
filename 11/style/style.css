@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+.content__container {
+    width: 80%;
+    margin: auto;
+}
+
+.logo img {
+    padding-top: 50px;
+    display: block;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.content__grid {
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: .5fr 1.3fr;
+}
+
+.content__grid>div {
+    align-self: start;
+}
+
+.filters {
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters__p {
+    padding: 20px;
+}
+
+.filters .label__container {
+    padding: 7px;
+    padding-left: 20px;
+}
+
+.filters .label__container:last-child {
+    padding-bottom: 20px;
+}
+
+.filters input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.filters input+.label__container label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.filters input+.label__container label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid #9ABBCE;
+    border-radius: .25em;
+    margin-right: .5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70%;
+}
+
+.filters input:checked+.label__container label::before {
+    border-color: #2196F3;
+    background-image: url(../media/checkbox.svg);
+}
+
+.filters input:checked+.label__container {
+    background-color: #F1FCFF;
+}
+
+.tabs {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabs__item {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #DFE5EC;
+}
+
+.tabs__left {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.tabs__right {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: black;
+}
+
+.tabs__item__active {
+    border: none;
+    background-color: #2196F3;
+}
+
+.tabs__item__active a {
+    color: white;
+}
+
+
+/* БИЛЕТ */
+
+.tickets .ticket:last-child {
+    margin-bottom: 20px;
+}
+
+.ticket {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.ticket_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket_header p {
+    font-size: 24px;
+    color: #2196F3;
+}
+
+.ticket_desc {
+    color: #A0B0B9;
+    font-size: 12px;
+}
+
+.ticket__grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 5px;
+}
+
+.ticket .ticket__grid:last-child {
+    margin-top: 10px;
+}

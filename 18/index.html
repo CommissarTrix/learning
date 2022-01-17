@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="main__wrapper">
+            <h3 class="title">Main metrics</h3>
+            <div class="filters">
+                <div @click='filter("last_hour")' v-bind:class='{"active_filter" : active_filer == "last_hour"}' class="filter_wrapper"><a href="#" class="filter">Last hour</a></div>
+                <div @click='test("last_hour")' v-bind:class='{"active_filter" : active_filer == 1}' class="filter_wrapper"> <a href="#" class="filter">Today</a></div>
+                <div @click='filter("yesterday") ' v-bind:class='{"active_filter" : active_filer == "yesterday"}' class="filter_wrapper"><a href="#" class="filter">Yesterday</a></div>
+                <div @click='filter("last_3days")' v-bind:class='{"active_filter" : active_filer == "last_3days"}' class="filter_wrapper"><a href="#" class="filter">Last 3 days</a></div>
+            </div>
+            <div class="errors">
+                <ul>
+                    <li>
+                        <div class="errors_li__item">
+                            <p>Errors: {{this.dashboard_data.data[0][`errors_${this.active_filer}`] ? this.dashboard_data.data[0][`errors_${this.active_filer}`].toFixed(2) : 0}} %
+                            </p>
+                            <p>Average: 0,11%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="errors_li__item">
+                            <p>Zeroes: {{this.dashboard_data.data[0][`errors_${this.active_filer}`] ? this.dashboard_data.data[0][`zeroes_${this.active_filer}`].toFixed(2) : 0}}%
+                            </p>
+                            <p>Average: 0,11%</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="errors_li__item">
+                            <p>Timeouts:{{this.dashboard_data.data[0][`errors_${this.active_filer}`] ? this.dashboard_data.data[0][`timeout_${this.active_filer}`].toFixed(2) : 0}}%</p>
+                            <p>Average: 0,11%</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="lines">
+                <div ref="error500" class="line"></div>
+                <div ref="error501" class="line"></div>
+                <div ref="error502" class="line"></div>
+                <div ref="errorOther" class="line"></div>
+            </div>
+            <div class="errors_counts">
+                <ul>
+                    <li>
+                        <div class="errors_counts__item">
+                            <p>Error 500: {{this.errors_counts['500']}}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="errors_counts__item">
+                            <p>Error 501: {{this.errors_counts['501']}}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="errors_counts__item">
+                            <p>Error 502: {{this.errors_counts['502']}}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="errors_counts__item">
+                            <p>Other: {{this.errors_counts['Other']}} </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cards__wrapper">
+                <!-- картОчка -->
+                <div class="card">
+                    <div class="card-left">
+                        <div class="images">
+                            <img src="media/images/filter.png" alt=""><br>
+                            <img class="img_line" src="media/images/line.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>Searches <span v-bind:class="{bad : (Math.floor(this.searches_current/this.searches_previous*100)-100) < 0}" class="content_span good">
+                                {{Math.floor(this.searches_current/this.searches_previous*100)-100}}%
+                            </span></h3>
+                            <p>{{this.searches_current}} <span class="content_date">Yesterday</span></p>
+                            <p class="content_gray">{{this.searches_previous}} <span class="content_date content_gray">last friday</span></p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h3>Mobile traffic: 100%</h3>
+                        <h3>Web traffic: 100%</h3>
+                        <p class="card-right-desc content_gray">You get 100% traffic on mobile and desktop devices.</p>
+                        <p class="card-right-help">Help: <a href="#">Searches</a>, <a href="#">Pessimisation</a></p>
+                    </div>
+                </div>
+                <hr>
+                <!-- / картОчка -->
+                <!-- картОчка -->
+                <div class="card">
+                    <div class="card-left">
+                        <div class="images">
+                            <img src="media/images/touch.png" alt=""><br>
+                            <img class="img_line" src="media/images/line.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>Clicks <span v-bind:class="{bad : (Math.floor(this.clicks_current/this.clicks_previous *100)-100) < 0}" class="content_span good">
+                                {{Math.floor(this.clicks_current/this.clicks_previous*100)-100}}%
+                            </span></h3>
+                            <p> {{this.clicks_current}} <span class="content_date">Yesterday</span></p>
+                            <p class="content_gray">{{this.clicks_previous}} <span class="content_date content_gray">last friday</span></p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h3 class="badh3">CTR: {{this.dashboard_data.data[0][`ctr_${this.active_filer}`].toFixed(2)}}%</h3>
+                        <p class="card-right-desc content_gray">Conversion from searches to clicks on all devices.</p>
+                        <p class="card-right-help">Help: <a href="#">CTR</a>, <a href="#">Cliks</a></p>
+                    </div>
+                </div>
+                <hr>
+                <!-- / картОчка -->
+                <!-- картОчка -->
+                <div class="card">
+                    <div class="card-left">
+                        <div class="images">
+                            <img src="media/images/filter.png" alt=""><br>
+                        </div>
+                        <div class="content">
+                            <h3>Bookings<span v-bind:class="{bad : (Math.floor(this.bookings_current/this.bookings_previous*100)-100) < 0}" class="content_span good">
+                                {{Math.floor(this.bookings_current/this.bookings_previous*100)-100}}%
+                            </span></h3>
+                            <p>{{this.bookings_current }} <span class="content_date">Yesterday</span></p>
+                            <p class="content_gray">{{this.bookings_previous}} <span class="content_date content_gray">last friday</span></p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h3>STR: {{this.dashboard_data.data[0][`str_${this.active_filer}`] ? this.dashboard_data.data[0][`str_${this.active_filer}`].toFixed(2) : 0}}%</h3>
+                        <h3>Avg. Check: {{Math.floor(this.dashboard_data.data[0][`avg_price_${this.active_filer}`])}} ₽</h3>
+                        <p class="card-right-desc content_gray">Conversion from cliks to bookings on all devices.</p>
+                        <p class="card-right-help">Help: <a href="#">STR</a>, <a href="#">Bookings</a>, <a href="#">Avg</a>, <a href="#">Check</a></p>
+                    </div>
+                </div>
+                <!-- / картОчка -->
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

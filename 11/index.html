@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="content__container">
+            <div class="logo">
+                <img src="media/Logo.png" alt="">
+            </div>
+            <div class="content__grid">
+                <div class="filters">
+                    <div class="filters__p">
+                        <p>КОЛИЧЕСТВО ПЕРЕСАДОК</p>
+                    </div>
+
+                    <input @change="filterFilters()" v-model="filters.all" id="input_1" type="checkbox">
+                    <div class="label__container"><label for="input_1">Все</label></div>
+                    <input @change="filterFilters()" v-model="filters.bp" id="input_2" type="checkbox">
+                    <div class="label__container"><label for="input_2">Без пересадок</label></div>
+                    <input @change="filterFilters()" v-model="filters.p1" id="input_3" type="checkbox">
+                    <div class="label__container"><label for="input_3">1 пересадка</label></div>
+                    <input @change="filterFilters()" v-model="filters.p2" id="input_4" type="checkbox">
+                    <div class="label__container"><label for="input_4">2 пересадки</label></div>
+                    <input @change="filterFilters()" v-model="filters.p3" id="input_5" type="checkbox">
+                    <div class="label__container"> <label for="input_5">3 пересадки</label></div>
+                </div>
+                <div class="tickets__container">
+                    <div class="tabs">
+                        <div @click="this.cheap=true;this.fast=false;this.opt=false; filterTabs()" v-bind:class='{"tabs__item__active" : this.cheap }' class="tabs__item tabs__left ">
+                            <a href="#">САМЫЙ ДЕШЕВЫЙ</a>
+                        </div>
+                        <div @click="this.cheap=false;this.fast=true;this.opt=false;filterTabs()" v-bind:class='{"tabs__item__active" : this.fast }' class="tabs__item tabs__middle">
+                            <a href="#">САМЫЙ БЫСТРЫЙ</a>
+                        </div>
+                        <div @click="this.cheap=false;this.fast=false;this.opt=true;filterTabs()" v-bind:class='{"tabs__item__active" : this.opt }' class="tabs__item tabs__right">
+                            <a href="#">ОПТИМАЛЬНЫЙ</a>
+                        </div>
+                    </div>
+                    <div class="tickets">
+                        <div v-for="ticket in filtered_filters_tickets" :key="ticket.id" class="ticket">
+                            <div class="ticket_header">
+                                <!-- Из-за того, что хавает 0 в начале -->
+                                <p>{{Math.floor(ticket.price/1000)}} {{ticket.price.toString().slice(2)}} Р</p>
+                                <img src="media/S7_Logo.png" alt="">
+                            </div>
+                            <div v-for="segment in ticket.segments" :key="segment.id" class="ticket__grid">
+                                <p class="ticket_desc">{{segment.origin}} - {{segment.destination}} </p>
+                                <P class="ticket_desc">В ПУТИ</P>
+                                <P class="ticket_desc">{{segment.stops[0] ? segment.stops.length > 1 ? segment.stops.length + ' ПЕРЕСАДКИ' : segment.stops.length + ' ПЕРЕСДКА' : 'БЕЗ ПЕРЕСАДОК' }}</P>
+                                <p>{{getTime(segment.date, segment.duration)[0][0]}}:{{getTime(segment.date, segment.duration)[0][1]}} - {{getTime(segment.date, segment.duration)[1][0]}}:{{getTime(segment.date, segment.duration)[1][1]}}</p>
+                                <p> {{Math.floor(segment.duration/60)}}ч {{Math.floor(segment.duration%60)}}м</p>
+                                <p> {{segment.stops[0] ? segment.stops[1] ? segment.stops[2] ? segment.stops[0]+', '+segment.stops[1]+', '+segment.stops[2] : segment.stops[0]+", "+segment.stops[1] : segment.stops[0] : '' }} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

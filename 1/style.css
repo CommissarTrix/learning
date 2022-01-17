@@ -1,0 +1,427 @@
+*{
+	font-weight:normal;
+	text-decoration: none;
+	padding:0;
+	margin:0;
+	font-family: "Hagin_Caps_Medium";
+}
+@font-face{
+	font-family: "Hagin_Caps_Medium";
+	src: url("media_D/fonts/Hagin Caps Medium.ttf");
+	font-style: normal; 
+	font-weight: normal; 
+}
+@font-face{
+	font-family: "Roboto";
+	src: url("media_D/fonts/Roboto-Regular.ttf");
+	font-style: normal; 
+	font-weight: normal; 
+}
+button{
+	font-size:1.2em;
+	margin-top:20px;
+	padding: 15px 60px;
+	background-color: Transparent;
+	border-radius:0;
+	border: 1px solid #baa480;
+	color:#baa480;
+}
+.wrapper_main{
+	color:#baa480;
+	height: 100vh;
+	width: 100%;
+	background-image: url(media_D/images/main/bg1.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.main{
+	position: relative;
+	margin:auto;
+	width: 97%;
+	height: 97%;
+}
+.main a{
+	color:#baa480;
+}
+nav{
+	padding-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.nav_left img{
+	position: relative;
+	bottom:5px;
+}
+.nav_center a, .nav_right img{
+	padding-right: 15px;
+}
+.main_heading{
+	width: 40%;
+	text-align: center;
+	position: relative;
+	top:20%;
+	left:50%;
+}
+.main_heading h1{
+	font-size:5em;
+}
+.main_heading h2{
+	padding-top: 10px;
+	font-size:3em;
+}
+.main .socials{
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+.main .socials img{
+	width: 20px;
+	height: 20px;
+}
+/* ВЕЛИКИ */
+
+.wrapper_bikes{
+	color:#86765b;
+	width: 100%;
+	background-color: #e9e1d5;
+}
+.bikes{
+	margin: auto;
+	width: 65%;
+	text-align:center;
+	margin:auto;
+	padding: 30px;
+}
+.bikes p{
+	font-family:"Roboto";
+}
+.bikes .heading h2{
+	font-size:1.8em;
+	padding-bottom: 10px;
+}
+.bikes .raw{
+	padding-top: 50px;
+}
+.bikes .raw, .bikes .line{
+	display: flex;
+	justify-content: space-between;
+}
+.bikes .raw .raw_card .raw_card_img{
+	margin:auto;
+}
+.bikes .raw .raw_card .raw_card_img{
+	border:2px solid white;
+	height: 180px;
+	width: 130px;
+}
+.bike_img{
+	padding-top:10px;
+	position: relative;
+	left:-20px;
+	width: 130%;
+}
+.bikes .raw .raw_card .raw_card_img button{
+	padding:0;
+	padding:0;
+	width: 50px;
+	height: 50px;
+	background-color: #ba4f4f;
+	border-radius: 0;
+	border: none;
+}
+.bikes .raw .raw_card .raw_card_img button:hover{
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.1)
+}
+.bikes .raw .raw_card .raw_card_text{
+	width: 130px;
+	padding-top:40px;
+}
+.bikes .raw .raw_card .raw_card_text .raw_card_desc{
+	color:#9f8c6f;
+	font-size:0.8em;
+}
+.bikes .raw .raw_card .raw_card_text .raw_card_pr {
+	padding-top: 10px;
+	color:red;
+}
+.bikes .line{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: space-around;
+}
+.bikes .line .line_center{
+	width: 24%;
+}
+.bikes .line .line_center button{
+	margin-top:0;
+	width: 100%;
+	padding:10px 0;
+}
+.bikes .line .line_left, .bikes .line .line_right{
+	position: relative;
+	top:20px;
+	height: 0;
+	width: 33%;
+	border:1px solid #baa480;
+}
+
+/*МАСТЕРСКАЯ*/
+.wrapper_workshop{
+	width: 100%;
+	background-image: url(media_D/images/main/bg2.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.workshop{
+	padding-top: 100px;
+	padding-bottom: 90px;
+	display: flex;
+	justify-content: space-between;
+	margin:auto;
+	width: 80%;
+}
+.workshop .left{
+	width: 50%;
+}
+.workshop .left img{
+	position: relative;
+	left:23%;
+	width: 65%;
+}
+.workshop .right{
+	width: 50%;
+}
+.workshop .right h2{
+	width: 80%;
+	color:#baa480;
+	font-size:1.8em;
+	padding-bottom: 10px;
+}
+.workshop .right p{
+	width: 80%;
+	font-family: "roboto";
+	color:white;
+	padding-bottom: 12px;
+}
+/*ЗАПЧАСТИ*/
+.wrapper_backups{
+	color:#86765b;
+	width: 100%;
+	background-color: #e9e1d5;
+}
+.backups{
+	margin: auto;
+	width: 65%;
+	text-align:center;
+	margin:auto;
+	padding: 30px;
+}
+.backups p{
+	font-family:"Roboto";
+}
+.backups .heading h2{
+	font-size:1.8em;
+	padding-bottom: 10px;
+}
+.backups .raw{
+	padding-top: 50px;
+}
+.backups .raw{
+	display: flex;
+	justify-content: space-between;
+}
+.backups .raw .raw_card .raw_card_img{
+	margin:auto;
+}
+.backups .raw .raw_card .raw_card_img{
+	border:2px solid white;
+	height: 180px;
+	width: 130px;
+}
+.bike_img{
+	padding-top:10px;
+	position: relative;
+	left:-20px;
+	width: 130%;
+}
+.SUmKA{
+	padding-top:10px;
+	padding-bottom: 40px;
+	position: relative;
+	top:17px;
+	left:-10px;
+	height: 80px;
+}
+.backups .raw .raw_card .raw_card_img button{
+	padding:0;
+	padding:0;
+	width: 50px;
+	height: 50px;
+	background-color: #ba4f4f;
+	border-radius: 0;
+	border: none;
+}
+.backups .raw .raw_card .raw_card_img button:hover{
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.1)
+}
+.backups .raw .raw_card .raw_card_text{
+	width: 130px;
+	padding-top:40px;
+}
+.backups .raw .raw_card .raw_card_text .raw_card_desc{
+	color:#9f8c6f;
+	font-size:0.8em;
+}
+.backups .raw .raw_card .raw_card_text .raw_card_pr {
+	padding-top: 10px;
+	color:red;
+}
+.backups .line{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: space-around;
+}
+.backups .line .line_center{
+	width: 24%;
+}
+.backups .line .line_center button{
+	margin-top:0;
+	width: 100%;
+	padding:10px 0;
+}
+.backups .line .line_left, .backups .line .line_right{
+	position: relative;
+	top:20px;
+	height: 0;
+	width: 33%;
+	border:1px solid #baa480;
+}
+/*ПОДВАЛ*/
+.wrapper_contacts{
+	width: 100%;
+	background-image: url(media_D/images/main/bg2.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.contacts{
+	width: 80%;
+	margin:auto;
+	padding: 30px;
+}
+.contacts .content{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 40px;
+}
+.contacts .content .content_left{
+	width: 50%;
+}
+.contacts .content .content_right img{
+	width: 100%;
+}
+.contacts .content .content_right{
+	width: 35%;
+}
+.contacts .content .content_left h2{
+	color:#baa480;
+	font-size:1.8em;
+	padding-bottom: 10px;
+}
+.contacts .content .content_left p{
+	font-family: "roboto";
+	color:white;
+	padding-bottom:30px;
+}
+.input_raw{
+	display: flex;
+	justify-content: space-between;
+}
+input,label{
+	color:white;
+}
+input[type="text"]{
+	border-radius: 0;
+	border:1px solid #baa480;
+	height: 2.5em;
+	background-color: transparent;
+}
+input[type="text"]::placeholder{
+	font-family: "roboto";
+	font-size:1.3em;
+	padding-left: 20px;
+}
+.input_1{
+	display: block;
+	width: 45%;
+}
+.input_2{
+	margin-top: 20px;
+	width: 100%;
+}
+.contacts .form_p{
+	font-family: "roboto";
+	padding-top: 20px;
+}
+.form_radio_raw{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 20px;
+}
+.form_radio input{
+	display: none;
+}
+.form_radio{
+	font-family:"roboto";
+	font-size:20px;
+}
+.form_radio span {
+	top:3px;
+	margin-right: 5px;
+	background: transparent;
+    position: relative; /* Относительное позиционирование */
+    display: inline-block; /* Строчно-блочный элемент */
+    width: 20px; 
+    height: 20px; /* Размеры */
+    border-radius: 50%; /* Круглый переключатель */
+    border:1px solid #baa480;
+}
+.form_radio input:checked + span::before { 
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    background: #baa480;
+    width: 16px; 
+    height: 16px;
+    border-radius: 50%;
+}
+input[type="checkbox"]{
+	margin-right: 10px;
+}
+.contacts_links{
+	padding: 15px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.contacts a{
+	color:#baa480;
+}
+.contacts hr{
+	border-color: #baa480;
+}
+footer{
+	padding-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+footer p{
+	color:#baa480;
+}
+footer .footer_left img{
+	width: 20px;
+	height: 20px;
+}

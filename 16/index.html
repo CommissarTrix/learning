@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="menu">
+            <div class="inputs_type">
+                <label for="radio1"><input id="radio1" v-model="line_type" value="butt" name="type" type="radio">Квадрат</label>
+                <label for="radio2"><input id="radio2" v-model="line_type" value="round" name="type" type="radio">Круг</label>
+                <label for="radio3"><input id="radio3" v-model="line_type" value="square" name="type" type="radio">Еще что-то</label>
+            </div>
+            <hr>
+            <div class="input_color">
+                <label for="color"><input v-model="line_color" id="color" type="color">Выбрать цвет</label>
+            </div>
+            <hr>
+            <div class="input_size">
+                <label for="size"><input v-model="line_size" id="size" type="number">Выберите размер</label>
+            </div>
+        </div>
+        <div class="canvas_section">
+            <canvas @mousemove="draw" ref="canvas" id='canvas'></canvas>
+            <div @click="clearCanvas" class="clear">Очистить изображение</div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

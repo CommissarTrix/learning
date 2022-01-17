@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="search">
+        <div class="input_block">
+            <input type="text" id="city_input" placeholder="Search here">
+            <button class="search_btn" onclick="getData(document.getElementById('city_input').value)">Найти</button>
+        </div>
+        
+        <p class="recent_heading">Recent search</p>
+        <ul>
+            <li id="recent1">Banjarmasin</li>
+            <li id="recent2">Yogyakarta</li>
+            <li id="recent3">Surabaya</li>
+        </ul>
+    </section>
+
+    <section class="content">
+        <div class="curret_city_block">
+            <img src="images/loc.png" alt="">
+            <p class="curret_city" id="curret_city">Moscow</p>
+        </div>
+        <img src="images/cloudy.png" alt="" class="weather_icon" id="weather_icon">
+        <div class="today_weather">
+            <p class="today_weather_heading" id="today_heading">Today, 12 September</p>
+            <h3 class="today_weather_temperature" id="today_weather_temperature">29</h3>
+            <p class="today_weather_clouds" id="today_weather_clouds">Cloudy</p>
+
+            <div class="today_weather_grid">
+                <div class="today_weather_grid_wind1">
+                    <img src="images/wind.png" alt="">
+                    <p>Wind</p>
+                </div>
+                <div class="today_weather_grid_wind2">
+                    <p id="today_wind">10 km/h</p>
+                </div>
+                <div class="today_weather_grid_hum1">
+                    <img src="images/hum.png" alt="">
+                    <p>Hum</p>
+                </div>
+                <div class="today_weather_grid_hum2">
+                    <p id="today_hum">54 %</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="today_weather2">
+            <div class="today_weather2_heading">
+                <p>Сегодня</p>
+                <p id="today_heading2">Sep, 12</p>
+            </div>
+            <div class="today_weather2_row">
+                <!-- картОчка -->
+                <div class="today_weather2_row_card">
+                    <p id="today_temp1">29°C</p>
+                    <img src="images/cloudy.png" alt="" id="today_img1">
+                    <p>15.00</p>
+                </div>
+                <!-- картОчка -->
+                <div class="today_weather2_row_card">
+                    <p id="today_temp2">29°C</p>
+                    <img src="images/cloudy.png" alt="" id="today_img2">
+                    <p>15.00</p>
+                </div>
+                <!-- картОчка -->
+                <div class="today_weather2_row_card">
+                    <p id="today_temp3">29°C</p>
+                    <img src="images/cloudy2.png" alt="" id="today_img3">
+                    <p>15.00</p>
+                </div>
+                <!-- картОчка -->
+                <div class="today_weather2_row_card">
+                    <p id="today_temp4">29°C</p>
+                    <img src="images/cloudy.png" alt="" id="today_img4">
+                    <p>15.00</p>
+                </div>
+                <!-- картОчка -->
+                <div class="today_weather2_row_card">
+                    <p id="today_temp5">29°C</p>
+                    <img src="images/cloudy.png" alt="" id="today_img5">
+                    <p>15.00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="week_weather">
+            <div class="week_weather_heading">
+                <p>Next Forecast</p>
+                <img src="images/calendar.png" alt="">
+            </div>
+
+            <div class="week_weather_row">
+                <p id="week_day1">Sep,13</p>
+                <img src="images/groza.png" alt="" id="week_img1">
+                <p id="week_temp1">21°</p>
+            </div>
+
+            <div class="week_weather_row">
+                <p id="week_day2">Sep,13</p>
+                <img src="images/rain.png" alt="" id="week_img2">
+                <p id="week_temp2">21°</p>
+            </div>
+
+            <div class="week_weather_row">
+                <p id="week_day3">Sep,13</p>
+                <img src="images/sunny.png" alt="" id="week_img3">
+                <p id="week_temp3">21°</p>
+            </div>
+
+            <div class="week_weather_row">
+                <p id="week_day4">Sep,13</p>
+                <img src="images/cloudy2.png" alt="" id="week_img4">
+                <p id="week_temp4">21°</p>
+            </div>
+
+            <div class="week_weather_row">
+                <p id="week_day5">Sep,13</p>
+                <img src="images/cloudy.png" alt="" id="week_img5">
+                <p id="week_temp5">25°</p>
+            </div>
+        </div> -->
+        <div class="copyright">
+            <h1>Baldez ©</h1>
+        </div>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

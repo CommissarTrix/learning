@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <section class="search">
+            <div class="input_block">
+                <input type="text" placeholder="Search here" v-model="inputText" :class='errorMsg'>
+                <button class="search_btn" @click="changeInfo()"> Найти</button>
+            </div>
+
+            <p class="recent_heading">Recent search</p>
+            <ul v-for="(city,index) in recentCities">
+                <div>
+                    <li @click="changeRecent(index)">{{ city }}</li>
+                </div>
+                
+            </ul>
+        </section>
+
+        <section class="content">
+            <div class="curret_city_block">
+                <img src="images/loc.png" alt="">
+                <p class="curret_city">{{ val.name }}</p>
+            </div>
+            <img :src="imageSrc" alt="" class="weather_icon">
+            <div class="today_weather">
+                <p class="today_weather_heading" >Today, {{today[0]}} {{today[1]}}</p>
+                <h3 class="today_weather_temperature">{{temp}}</h3>
+                <p class="today_weather_clouds" id="today_weather_clouds">Cloudy</p>
+
+                <div class="today_weather_grid">
+                    <div class="today_weather_grid_wind1">
+                        <img src="images/wind.png" alt="">
+                        <p>Wind</p>
+                    </div>
+                    <div class="today_weather_grid_wind2">
+                        <p>{{ wind }} km/h</p>
+                    </div>
+                    <div class="today_weather_grid_hum1">
+                        <img src="images/hum.png" alt="">
+                        <p>Hum</p>
+                    </div>
+                    <div class="today_weather_grid_hum2">
+                        <p>{{ hum }} %</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="today_weather2">
+                <div class="today_weather2_heading">
+                    <p>Сегодня</p>
+                    <p id="today_heading2">{{today[1]}} {{today[0]}}</p>
+                </div>
+                <div class="today_weather2_row">
+                    <div class="today_weather2_row_card" v-for="(item, i) in todayWeather">
+                        <p>{{ item.temp }}°C</p>
+                        <img src="images/cloudy.png" alt="">
+                        <p>{{ item.time }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <h1>Baldez ©</h1>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
